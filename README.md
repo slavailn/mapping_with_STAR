@@ -40,7 +40,7 @@ Create genome index:
 
        ```      
 
-NOTE: STAR tends to open may temporary files and this problem is aggravated by number of threads used. If the program crashes due to high number of open files,
+NOTE: STAR tends to open many temporary files and this problem is aggravated by number of threads used. If the program crashes due to high number of open files,
       you can either increase *ulimit* or decrease a number of threads.
 NOTE: Another problem that occurs frequently is STAR crashing due to broken fastq files. For example paired-end files may contain singletons or any fastq files may 
       containe the reads that are too short.
