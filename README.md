@@ -18,6 +18,7 @@ Indexing options:
 Create genome index:
     
     ```
+
     STAR --runThreadN num_threads --runMode genomeGenerate --genomeFastaFiles path/to/genome.fasta \ 
     --sjdbGTFfile path/to/annotation.gtf --sjdbOverhang max(readLength)-1 --genomeDir /path/to/index_directory
     
@@ -33,8 +34,10 @@ Create genome index:
        Example of mapping command:
      
        ```
+
        STAR --runThreadN 16 --genomeDir /path/to/star_index_dir --readFilesIn sample_R1.fq sample_R2.fq \
             --outSAMtype BAM SortedByCoordinate --outFileNamePrefix sample
+
        ```      
 
 NOTE: STAR tends to open may temporary files and this problem is aggravated by number of threads used. If the program crashes due to high number of open files,
@@ -44,14 +47,19 @@ NOTE: Another problem that occurs frequently is STAR crashing due to broken fast
       The problem with sigletons can be solved using *repair* tool from BBtools like so:
      
       ```
+
       repair.sh in1=s_1.fastq in2=s_2.fastq out1=s1_fixed_1.fq out2=s2_fixed_2.fq repair
 
+      
       ```
      
       Short reads can be filtered out using *reformat* tool from BBtools:
      
+ 
       ```
+
       reformat.sh in=file in2=file2 out=outfile out2=outfile2 minlen=25
+
      
       ```
 
